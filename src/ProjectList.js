@@ -13,7 +13,8 @@ const ProjectList = (props) => {
 				return (
 					<CenteredRow key={index}>
 						<Card> 
-							{project.name}
+							<p>{project.name}</p>
+							<p>{project.description}</p>
 						</Card>
 					</CenteredRow>
 				)

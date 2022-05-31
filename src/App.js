@@ -13,15 +13,17 @@ class App extends React.Component {
 	setProjects = (projects) => {
 		this.setState({projects: projects})
 	}
+
 	render() {
+		const {projects} = this.state
 		return (
 			<div>
 				<h1>My Projects</h1>
 				<CenteredRow >
-					<NewProjectForm projects={this.state.projects} setProjects={this.setProjects} />
+					<NewProjectForm projects={projects} setProjects={this.setProjects} />
 				</CenteredRow>
 				<CenteredRow >
-					<ProjectList projects={this.state.projects}/>
+					<ProjectList projects={projects}/>
 				</CenteredRow>
 			</div>
 		)
