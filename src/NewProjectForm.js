@@ -9,7 +9,7 @@ class NewProjectForm extends React.Component {
 		this.state = {
 			name: "",
 			description: "",
-			empty: true
+			empty: false
 		}
 	}
 
@@ -32,6 +32,11 @@ class NewProjectForm extends React.Component {
 		// and updates the list of projects using setState passed in from App
 		event.preventDefault()
 		const {name, description} = this.state;
+		if (!name) { 
+			this.setState({empty: true})
+			// don't let the code continue and update the projects array
+			return
+		} 
 		
 		// add the name & desc of the current project to the existing array of projects
 		let updatedProjects = [
@@ -40,7 +45,7 @@ class NewProjectForm extends React.Component {
 		this.props.setProjects(updatedProjects)
 
 		// clear out project details 
-		this.setState({name: '', description: ''})
+		this.setState({name: '', description: '', empty: false})
 	}
 
 	// 2. Add another Input of type text for a description after the name field. 
@@ -50,14 +55,15 @@ class NewProjectForm extends React.Component {
 	//    
 	//    See ProjectList for the update you should include there to show the description.
 	//
-	// 3. If Add Project is clicked and no name is given, display a warning message 
+	// 3. If Add Project is clicked and no name is given, display a empty message 
 	//    above the form that says "You must enter a project name".
-	//    Make sure you consult the value in state (not in the DOM) to determine when to display a warning.
+	//    Make sure you consult the value in state (not in the DOM) to determine when to display a empty.
 	render() {
-		const {name, description} = this.state
+		const {name, description, empty} = this.state
 		return (
 			
 			<div>
+				{empty && <p>You must enter a project name</p>}
 				<Card data-testid="name-state" bgcolor="pink">
 					name: {name}
 				</Card>
