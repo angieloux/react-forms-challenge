@@ -1,7 +1,7 @@
 # React forms challenge (My Project List)
 Below are the original instructions from a challenge I completed relating to how to use/manipulate form data using controlled components. 
 
-Essentially, the challenge required me to refactor the existing code to change the webpage from [this]('https://www.youtube.com/watch?v=HIIij5J-vNQ') to [this](https://www.youtube.com/watch?v=XzD7Qff9HSQ).
+Essentially, the challenge required me to refactor the existing code to change the webpage from [this](https://www.youtube.com/watch?v=HIIij5J-vNQ) to [this](https://www.youtube.com/watch?v=XzD7Qff9HSQ).
 
 <hr/>
 
